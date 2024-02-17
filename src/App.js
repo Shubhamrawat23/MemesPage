@@ -8,7 +8,6 @@ function App() {
   const [page,setPage] = useState(1)
   const [name,setName] = useState("dankmemes")
   const getMeme = useGetMeme(name)
-  console.log(getMeme);
 
 
 
@@ -45,7 +44,7 @@ function App() {
         {getMeme && getMeme.slice(page * 6 - 6, page * 6).map((value, index) => (
           <div key={index}>
 
-            <MemeCard title={value.title} image={value.preview[2]} author={value.author} postPreview={()=>handlePostPreview(value.postLink)}/>
+            <MemeCard title={value.title} image={value.preview[2]} author={value.author} postPreview={()=>handlePostPreview(value.postLink)} downloadLink={value.url}/>
           </div>
         ))}
       </div>

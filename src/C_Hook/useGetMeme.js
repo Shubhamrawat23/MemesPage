@@ -6,6 +6,7 @@ export default function useGetMeme(memeChannel, noOfMemes=50) {
         fetch(`https://meme-api.com/gimme/${memeChannel}/${noOfMemes}`)
         .then((resp)=>resp.json())
         .then((res)=>setData(res.memes))
+        .catch((e)=>console.log(e))
     },[memeChannel,noOfMemes])
     return data;
 }
