@@ -3,35 +3,25 @@ import './App.css';
 import useGetMeme from './C_Hook/useGetMeme.js'
 import InputFields from './Components/InputFields.js';
 import MemeCard from './Components/MemeCard/MemeCard.js'
-
 function App() {
   const [page,setPage] = useState(1)
-  const [name,setName] = useState("dankmemes")
+  const [name,setName] = useState("")
+  const [recentSearch,setRecentSearch] = useState([])
   const getMeme = useGetMeme(name)
-
-
 
   const handleChannelName = (e)=>{
     e.preventDefault()
     if (e.target.channelName.value !=="") {
-      setName(e.target.channelName.value)
-      e.target.channelName.value=""
+      let valueOfName = e.target.channelName.value
+      setName(valueOfName)
+      if (!recentSearch.includes(valueOfName)) setRecentSearch([...recentSearch,valueOfName])
     }
     else{
       return alert("please enter some channel name")
-    }
-    
+    }    
+    e.target.channelName.value=""
   }
- /* const handleDownload = async(imageUrl,imageName)=>{
-    const imgBlob = await fetch(imageUrl).then((res)=>res.arrayBuffer()).then((val)=>new Blob([val],{type:'image/gif'}))
 
-    const link = document.createElement('a')
-    link.href= URL.createObjectURL(imgBlob)
-    link.download = imageName
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-  }*/
   const handlePostPreview = (value)=>{
     window.open(value)
   }
@@ -51,6 +41,16 @@ function App() {
 
       <button disabled={page<=1} onClick={()=>setPage(page-1)}>Back</button>
       <button disabled={getMeme && page>=Math.ceil((getMeme.length)/6)} onClick={()=>setPage(page+1)}>Next</button>
+
+
+      <div>
+        <p>Recent Searches</p>
+        {recentSearch && recentSearch.map((value,i)=>(
+          <div key={i} onClick={()=>setName(value)}>
+            {value}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
