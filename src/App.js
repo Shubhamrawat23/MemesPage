@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import useGetMeme from './C_Hook/useGetMeme.js'
 import InputFields from './Components/InputFields.js';
@@ -9,22 +9,32 @@ function App() {
   const [recentSearch,setRecentSearch] = useState([])
   const getMeme = useGetMeme(name)
 
+
   const handleChannelName = (e)=>{
     e.preventDefault()
     if (e.target.channelName.value !=="") {
       let valueOfName = e.target.channelName.value
       setName(valueOfName)
-      if (!recentSearch.includes(valueOfName)) setRecentSearch([...recentSearch,valueOfName])
+      if (!recentSearch.includes(valueOfName)) {setRecentSearch([...recentSearch,valueOfName])
+      
+      localStorage.setItem("recentSearch",JSON.stringify([valueOfName,...recentSearch]))}
     }
-    else{
-      return alert("please enter some channel name")
-    }    
-    e.target.channelName.value=""
-  }
+  else{
+    return alert("please enter some channel name")
+  }    
+  e.target.channelName.value=""
+  
+}
 
-  const handlePostPreview = (value)=>{
-    window.open(value)
-  }
+const handlePostPreview = (value)=>{
+  window.open(value)
+}
+
+useEffect(()=>{
+  setPage(1)
+  let prevSearches = JSON.parse(localStorage.getItem("recentSearch"));
+  if(prevSearches !== null) setRecentSearch(prevSearches)
+  },[setPage,setRecentSearch])
  
   return (
     <div className="App">
@@ -46,7 +56,7 @@ function App() {
       <div>
         <p>Recent Searches</p>
         {recentSearch && recentSearch.map((value,i)=>(
-          <div key={i} onClick={()=>setName(value)}>
+          <div key={i} onClick={()=>(setName(value),  window.scrollTo({ top: 0, behavior: "smooth" })) }>
             {value}
           </div>
         ))}

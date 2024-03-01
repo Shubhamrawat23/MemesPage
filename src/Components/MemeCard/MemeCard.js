@@ -6,7 +6,7 @@ export default function MemeCard({title,image,author,postPreview,downloadLink}){
         .then((res)=>res.arrayBuffer())
         .then((val)=>new Blob([val],{type:'image/gif'}))
 
-    
+        
         const link = document.createElement('a')
         link.href= URL.createObjectURL(imgBlob)
         link.download = title
