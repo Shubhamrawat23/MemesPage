@@ -1,6 +1,9 @@
 import React from "react";
+import "./MemeCard.css"
+import downloadIcon from "../../Icons/downloadIcon.png"
+import previewIcon from "../../Icons/previewIcon.png"
 
-export default function MemeCard({title,image,author,postPreview,downloadLink}){
+export default function MemeCard({title,image,postPreview,downloadLink}){
     const handleDownload = async(downloadLink,title)=>{
         const imgBlob = await fetch(downloadLink)
         .then((res)=>res.arrayBuffer())
@@ -14,12 +17,18 @@ export default function MemeCard({title,image,author,postPreview,downloadLink}){
         link.click()
        document.body.removeChild(link)
     }
+
+    const handlePostPreview = (value)=>{
+            window.open(value)
+    }
     return(
-        <div style={{border:"2px solid red", width:"auto", height:"auto"}}>
-            <img src={image} alt={title}/>
-            <h3>Author- {author}</h3>
-            <button onClick={postPreview}>Meme Preview</button>
-            <button onClick={()=>handleDownload(downloadLink,title)}>Download</button>
-        </div>
+        <section id="memeCardSec">
+            <p id="memeTitle">{title}</p>
+            <img src={image[2]} alt={title} id="memeImg" />
+            <div id="memePreviewAndDownloadBox">
+                <img src={previewIcon} alt="preview" onClick={() => handlePostPreview(postPreview)} id="memePreviewBtn"/>
+                <img src={downloadIcon} alt="download" onClick={() => handleDownload(downloadLink, title)} id="memeDownloadBtn"/>
+            </div>
+        </section>
     )
 }

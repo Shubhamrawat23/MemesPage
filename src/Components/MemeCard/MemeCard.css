@@ -1,0 +1,57 @@
+#memeCardSec{
+    overflow: hidden;
+}
+
+#memeCardSec:hover #memePreviewAndDownloadBox{
+    transform: translateX(0%);
+}
+
+
+#memeImg{
+    width: 25rem;
+    height: 26rem;
+    object-fit: contain;
+}
+
+#memeTitle{
+    padding-left: 10px;
+    margin-top: 15px;
+    font-size: larger;
+    text-align: left;
+    font-weight: 600;
+}
+
+#memeAuthorName{
+    color: rgb(135, 120, 93);
+    position: relative;
+    top: -15px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#memePreviewAndDownloadBox{
+    width: 3rem;
+    height: 6rem;
+    border: 0;
+    position: relative;
+    top: -400px;
+    left: 397px;
+    backdrop-filter: blur(5px);
+    transform: translateX(100%);
+    transition: 0.5s ease-in;
+}
+
+
+#memePreviewBtn,#memeDownloadBtn{
+    background-color: transparent;
+    width: 3rem;
+    height: 2.5rem;
+    padding: 3px;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: transparent;
+    opacity: 0.7;
+}
+#memePreviewBtn:hover, #memeDownloadBtn:hover{
+    opacity: 1;
+}
