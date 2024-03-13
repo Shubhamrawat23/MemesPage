@@ -35,7 +35,6 @@ function App() {
     e.target.channelName.value = ""
   }
 
-  console.log(getMeme);
 
 useEffect(()=>{
   let prevSearches = JSON.parse(localStorage.getItem("recentSearch"));
@@ -110,7 +109,10 @@ useEffect(()=>{
             <div key={i}
               className='searches'
               style={{ backgroundColor: value === name ? "wheat" : "black", color: value === name ? "black" : "wheat" }}
-              onClick={() => (setName(value), setIsLoading(true), setPage(1), window.scrollTo({top:0,behavior:"smooth"}))}>
+              onClick={() => {setName(value) 
+                setIsLoading(true) 
+                setPage(1)
+                window.scrollTo({top:0,behavior:"smooth"})}}>
               {value}
             </div>
           ))}
