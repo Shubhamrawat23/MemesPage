@@ -44,3 +44,111 @@
     background-color: white;
     color: black;
 }
+
+
+
+
+/*------------------Media Queries---------------------*/
+
+
+
+
+
+
+@media screen and (max-width:1025px) {
+    #inputForm {
+        left: 280px;
+    }
+}
+
+
+
+
+@media screen and (min-width:427px) and (max-width:769px) {
+    #inputForm {
+        height: 8rem;
+        width: 30rem;
+        left: 140px;
+    }
+    #inputChannel{
+        height: 3rem;
+        width: 20rem;
+        top: 25px;
+        padding-left: 15px;
+        font-size: large;
+    }
+
+    #submitBtn{
+        width: 6rem;
+        height: 2.5rem;
+        top: 25px;
+        left: 15px;
+    }
+}
+
+
+
+
+@media screen and (max-width:426px) {
+    #inputForm {
+        height: 4rem;
+        width: 25rem;
+        left: 0px;
+    }
+    #inputChannel{
+        height: 3rem;
+        width:  15rem;
+        top: 8px;
+        padding-left: 10px;
+        font-size: large;
+    }
+
+    #submitBtn{
+        width: 6rem;
+        height: 2.5rem;
+        top: 8px;
+        left: 15px;
+    }
+}
+@media screen and (min-width:321px) and (max-width:376px) {
+    #inputForm {
+        height: 4rem;
+        width: 23rem;
+        left: 0px;
+    }
+    #inputChannel{
+        height: 3rem;
+        width:  12rem;
+        top: 8px;
+        padding-left: 10px;
+        font-size: large;
+    }
+
+    #submitBtn{
+        width: 6rem;
+        height: 2.5rem;
+        top: 5px;
+        left: 15px;
+    }
+}
+@media screen and (max-width:320px) {
+    #inputForm {
+        height: 4rem;
+        width: 19rem;
+        left: 5px;
+    }
+    #inputChannel{
+        height: 3rem;
+        width:  10rem;
+        top: 5px;
+        padding-left: 10px;
+        font-size: large;
+    }
+
+    #submitBtn{
+        width: 6rem;
+        height: 2.5rem;
+        top: 5px;
+        left: 15px;
+    }
+}

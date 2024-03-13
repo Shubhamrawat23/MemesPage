@@ -2,11 +2,6 @@
     overflow: hidden;
 }
 
-#memeCardSec:hover #memePreviewAndDownloadBox{
-    transform: translateX(0%);
-}
-
-
 #memeImg{
     width: 25rem;
     height: 26rem;
@@ -40,6 +35,9 @@
     transform: translateX(100%);
     transition: 0.5s ease-in;
 }
+#memeCardSec:hover #memePreviewAndDownloadBox{
+    transform: translateX(0%);
+}
 
 
 #memePreviewBtn,#memeDownloadBtn{
@@ -54,4 +52,59 @@
 }
 #memePreviewBtn:hover, #memeDownloadBtn:hover{
     opacity: 1;
+}
+
+
+
+
+/*------------------Media Queries---------------*/
+
+
+
+
+
+
+@media screen and (min-width:427px) and (max-width:769px){
+    #memeImg{
+        width: 22rem;
+        height: 22rem;
+    }
+    #memePreviewAndDownloadBox{
+        left: 318px;
+    }
+}
+
+
+
+
+
+@media screen and (max-width:426px){
+    #memeImg{
+        width: 20rem;
+        height: 19rem;
+    }
+    #memePreviewAndDownloadBox{
+        left: 335px;
+        top: -330px;
+    }
+}
+@media screen and (min-width:321px) and (max-width:376px){
+    #memeImg{
+        width: 19rem;
+        height: 15rem;
+    }
+    #memePreviewAndDownloadBox{
+        left: 270px;
+        top: -250px;
+    }
+}
+@media screen and (max-width:320px){
+    #memeImg{
+        width: 19rem;
+        height: 15rem;
+    }
+    #memePreviewAndDownloadBox{
+        left: 261px;
+        top: -250px;
+    }
 }

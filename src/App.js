@@ -24,9 +24,9 @@ function App() {
       setName(valueOfName)
       setIsLoading(true)
       if (!recentSearch.includes(valueOfName)) {
-        setRecentSearch([...recentSearch, valueOfName])
+        setRecentSearch([valueOfName,...recentSearch])
         
-        localStorage.setItem("recentSearch", JSON.stringify([valueOfName, ...recentSearch]))
+        localStorage.setItem("recentSearch", JSON.stringify([valueOfName,...recentSearch]))
       }
     }
     else {
@@ -110,7 +110,7 @@ useEffect(()=>{
             <div key={i}
               className='searches'
               style={{ backgroundColor: value === name ? "wheat" : "black", color: value === name ? "black" : "wheat" }}
-              onClick={() => (setName(value), setIsLoading(true), setPage(1))}>
+              onClick={() => (setName(value), setIsLoading(true), setPage(1), window.scrollTo({top:0,behavior:"smooth"}))}>
               {value}
             </div>
           ))}

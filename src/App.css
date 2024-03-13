@@ -41,6 +41,9 @@
   border-radius: 20px;
 }
 
+
+
+
 #prevBtn{
   width: 5rem;
   height: 5rem;
@@ -91,4 +94,139 @@
 .searches:hover{
   box-shadow: 1px 1px 10px whitesmoke;
   transform: scale(110%);
+}
+
+
+
+
+/*------------------Media Queries---------------------*/
+
+
+@media screen and (min-width:1024px) and (max-width:1441px) {
+  #mainMemeContainer{
+    padding: 0rem 2rem 3rem 2rem;
+  }
+
+  #prevBtn{
+    right: 39rem;
+  }
+  
+  #nextBtn{
+    left: 39rem;
+  }  
+}
+
+
+
+
+@media screen and (max-width:1025px){
+  #prevBtn{
+    right: 26rem;
+  }
+  
+  #nextBtn{
+    left: 26rem;
+  }
+}
+
+
+
+
+@media screen and (min-width:427px) and (max-width:769px){
+  #prevBtn{
+    width: 5rem;
+    height: 5rem;
+    right: 18rem;
+  }
+  
+  #nextBtn{
+    width: 5rem;
+    height: 5rem;
+    left: 18rem;
+  }
+
+  #mainMemeContainer{
+    padding: 10px;
+  }
+
+  .memeBox{
+    width: 23rem;
+    height: 28rem;
+  }
+}
+
+
+
+
+@media screen and (max-width:426px) {
+  #prevBtn{
+    width: 3rem;
+    height: 3rem;
+    right: 8rem;
+  }
+  
+  #nextBtn{
+    width: 3rem;
+    height: 3rem;
+    left: 8rem;
+  }
+
+  #mainMemeContainer{
+    padding: 0;
+    padding-left:20px;
+  }
+
+  .memeBox{
+    width: 24rem;
+    height: 28rem;
+    padding-left: 2px;
+  }
+}
+@media screen and (min-width:321px) and (max-width:376px){
+  #prevBtn{
+    width: 3rem;
+    height: 3rem;
+    right: 8rem;
+  }
+  
+  #nextBtn{
+    width: 3rem;
+    height: 3rem;
+    left: 8rem;
+  }
+
+  #mainMemeContainer{
+    padding: 0;
+    padding-left:15px;
+  }
+
+  .memeBox{
+    width: 20rem;
+    height: 28rem;
+    padding-left: 2px;
+  }
+
+}
+@media screen and (max-width:320px) {
+  #prevBtn{
+    width: 3rem;
+    height: 3rem;
+    right: 6rem;
+  }
+  
+  #nextBtn{
+    width: 3rem;
+    height: 3rem;
+    left: 6rem;
+  }
+
+  #mainMemeContainer{
+    padding:3px;
+  }
+
+  .memeBox{
+    width: 19.5rem;
+    height: 28rem;
+    padding-left: 2px;
+  }
 }
