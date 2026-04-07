@@ -73,13 +73,13 @@
   height: 100%;
 }
 
-#mainRecentSearch{
+/* #mainRecentSearch{
   height: auto;
   display: flex;
   flex-wrap: wrap;
   padding: 0px;
-}
-
+} */
+/* 
 .searches{
   background-color: black;
   color: wheat;
@@ -94,7 +94,7 @@
 .searches:hover{
   box-shadow: 1px 1px 10px whitesmoke;
   transform: scale(110%);
-}
+} */
 
 
 

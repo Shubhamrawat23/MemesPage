@@ -44,8 +44,29 @@ useEffect(()=>{
   return (
     <div className="App">
 
+      <div className='flex py-2 px-4 items-center justify-between'>
+        <div className='text-slate-300'>Memes</div>
       {/*--------------------- Input Channels Name --------------------- */}
-      <InputFields onChannelName={handleChannelName} />
+        <InputFields onChannelName={handleChannelName} />
+      </div>
+
+
+      {/*----------------- Recent Searches -------------------- */}
+      <div className='flex px-4 items-center'>
+        <p style={{ color: "white"}}>Recent:</p>
+        <div id='mainRecentSearch'>
+          {recentSearch && recentSearch.map((value, i) => (
+            <span key={i}
+              className={`mx-2 py-2 px-4 rounded-full text-sm cursor-pointer transition-all ${value === name ? "bg-white text-black" : "bg-black text-white hover:bg-zinc-900"}`}
+              onClick={() => {setName(value) 
+                setIsLoading(true) 
+                setPage(1)
+                window.scrollTo({top:0,behavior:"smooth"})}}>
+              {value}
+            </span>
+          ))}
+        </div>
+      </div>
 
       <div id={name===""?'boxOfAboutMeme':'activeAboutMeme'}>
         {name === "" ?
@@ -55,7 +76,6 @@ useEffect(()=>{
           </>
         }
       </div>
-
 
 
       {/*------------------------ Main Meme Card ----------------- */}
@@ -98,26 +118,6 @@ useEffect(()=>{
           disabled={getMeme && page >= Math.ceil((getMeme.length) / 6)} />
       </button>
 
-
-
-
-      {/*----------------- Recent Searches -------------------- */}
-      <div>
-        <p style={{ color: "white", fontSize: "xx-large" }}>Recent Searches</p>
-        <div id='mainRecentSearch'>
-          {recentSearch && recentSearch.map((value, i) => (
-            <div key={i}
-              className='searches'
-              style={{ backgroundColor: value === name ? "wheat" : "black", color: value === name ? "black" : "wheat" }}
-              onClick={() => {setName(value) 
-                setIsLoading(true) 
-                setPage(1)
-                window.scrollTo({top:0,behavior:"smooth"})}}>
-              {value}
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }
