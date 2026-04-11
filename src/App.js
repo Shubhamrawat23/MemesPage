@@ -65,10 +65,10 @@ useEffect(()=>{
               {value}
             </span>
           ))}
-        </div>
+        </div> 
       </div>
 
-      <div id={name===""?'boxOfAboutMeme':'activeAboutMeme'}>
+      <div id={name===""?'boxOfAboutMeme':'activeAboutMeme'} className={name != "" ?'my-4':''}>
         {name === "" ?
           <div id='enterName'>Please Enter any channel Name</div> :
           <>
@@ -84,12 +84,10 @@ useEffect(()=>{
         (<h1 style={{ color: "white" }}>Loading...</h1>) :
         <div id='mainMemeContainer'>
           {getMeme && getMeme.slice(page * 6 - 6, page * 6).map((value, index) => (
-            <div key={index} className='memeBox'>
-              <MemeCard title={value.title}
+              <MemeCard key={index} title={value.title}
                 image={value.preview}
                 postPreview={value.postLink}
                 downloadLink={value.url} />
-            </div>
           ))}
         </div>
       }

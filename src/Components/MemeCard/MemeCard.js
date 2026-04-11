@@ -22,13 +22,15 @@ export default function MemeCard({title,image,postPreview,downloadLink}){
             window.open(value)
     }
     return(
-        <section id="memeCardSec">
+        <section id="memeCardSec rounded border">
+            <div className="w-full flex justify-around mt-2 mx-auto aspect-video">
+                <img src={image[2]} alt={title} className="memeImg rounded" />
+            </div>
             <p id="memeTitle">{title}</p>
-            <img src={image[2]} alt={title} id="memeImg" />
-            <div id="memePreviewAndDownloadBox">
+            {/* <div id="memePreviewAndDownloadBox">
                 <img src={previewIcon} alt="preview" onClick={() => handlePostPreview(postPreview)} id="memePreviewBtn"/>
                 <img src={downloadIcon} alt="download" onClick={() => handleDownload(downloadLink, title)} id="memeDownloadBtn"/>
-            </div>
+            </div> */}
         </section>
     )
 }

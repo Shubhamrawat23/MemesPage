@@ -2,9 +2,9 @@
     overflow: hidden;
 }
 
-#memeImg{
-    width: 25rem;
-    height: 26rem;
+.memeImg{
+    /* width: 25rem; */
+    /* height: 26rem; */
     object-fit: contain;
 }
 
@@ -65,7 +65,7 @@
 
 
 @media screen and (min-width:427px) and (max-width:769px){
-    #memeImg{
+    .memeImg{
         width: 22rem;
         height: 22rem;
     }
@@ -79,7 +79,7 @@
 
 
 @media screen and (max-width:426px){
-    #memeImg{
+    .memeImg{
         width: 20rem;
         height: 19rem;
     }
@@ -89,7 +89,7 @@
     }
 }
 @media screen and (min-width:321px) and (max-width:376px){
-    #memeImg{
+    .memeImg{
         width: 19rem;
         height: 15rem;
     }
@@ -99,7 +99,7 @@
     }
 }
 @media screen and (max-width:320px){
-    #memeImg{
+    .memeImg{
         width: 19rem;
         height: 15rem;
     }
