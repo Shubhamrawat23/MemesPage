@@ -82,9 +82,10 @@ useEffect(()=>{
 
       {isLoading ?
         (<h1 style={{ color: "white" }}>Loading...</h1>) :
-        <div id='mainMemeContainer'>
-          {getMeme && getMeme.slice(page * 6 - 6, page * 6).map((value, index) => (
+        <div id='mainMemeContainer' className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 items-stretch'>
+          {getMeme && getMeme.map((value, index) => (
               <MemeCard key={index} title={value.title}
+                author={value.author}
                 image={value.preview}
                 postPreview={value.postLink}
                 downloadLink={value.url} />
@@ -96,7 +97,7 @@ useEffect(()=>{
 
 
       {/*-------------- Next/Previous Button------------ */}
-      <button disabled={page <= 1 || !getMeme}
+      {/* <button disabled={page <= 1 || !getMeme}
         onClick={() => setPage(prevVal=>prevVal - 1)}
         id='prevBtn'>
         <video src={BackBtn}
@@ -114,7 +115,7 @@ useEffect(()=>{
           onClick={(e) => e.target.play()}
           id='nextVideo'
           disabled={getMeme && page >= Math.ceil((getMeme.length) / 6)} />
-      </button>
+      </button> */}
 
     </div>
   );

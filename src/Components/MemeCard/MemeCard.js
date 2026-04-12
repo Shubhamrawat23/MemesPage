@@ -3,7 +3,7 @@ import "./MemeCard.css"
 import downloadIcon from "../../Icons/downloadIcon.png"
 import previewIcon from "../../Icons/previewIcon.png"
 
-export default function MemeCard({title,image,postPreview,downloadLink}){
+export default function MemeCard({title,image,author,postPreview,downloadLink}){
     const handleDownload = async(downloadLink,title)=>{
         const imgBlob = await fetch(downloadLink)
         .then((res)=>res.arrayBuffer())
@@ -22,11 +22,12 @@ export default function MemeCard({title,image,postPreview,downloadLink}){
             window.open(value)
     }
     return(
-        <section id="memeCardSec rounded border">
-            <div className="w-full flex justify-around mt-2 mx-auto aspect-video">
+        <section className="memeCardSec rounded border m-0 pb-2 h-full">
+            <div className="w-full flex justify-around mx-auto aspect-square bg-black py-4">
                 <img src={image[2]} alt={title} className="memeImg rounded" />
             </div>
-            <p id="memeTitle">{title}</p>
+            <p id="memeTitle" className="font-bold">{title}</p>
+            <p className="text-left py-2 px-3 text-gray-400 text-xs">{author}</p>
             {/* <div id="memePreviewAndDownloadBox">
                 <img src={previewIcon} alt="preview" onClick={() => handlePostPreview(postPreview)} id="memePreviewBtn"/>
                 <img src={downloadIcon} alt="download" onClick={() => handleDownload(downloadLink, title)} id="memeDownloadBtn"/>
