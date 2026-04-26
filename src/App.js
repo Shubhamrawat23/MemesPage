@@ -11,10 +11,9 @@ import MemeCard from './Components/MemeCard/MemeCard.js'
 
 function App() {
   const [name,setName] = useState("")
-  const [setPage] = useState(1)
   const [recentSearch,setRecentSearch] = useState([])
   const [isLoading,setIsLoading] = useState(false)
-  const getMeme = useGetMeme(name,setIsLoading,setPage)
+  const getMeme = useGetMeme(name,setIsLoading)
 
 
   const handleChannelName = (e) => {
@@ -54,13 +53,12 @@ useEffect(()=>{
       {/*----------------- Recent Searches -------------------- */}
       <div className='flex px-4 items-center'>
         <p style={{ color: "white"}}>Recent:</p>
-        <div id='mainRecentSearch'>
+        <div id='mainRecentSearch' className='overflow-auto py-2 ml-1'>
           {recentSearch && recentSearch.map((value, i) => (
             <span key={i}
-              className={`mx-2 py-2 px-4 rounded-full text-sm cursor-pointer transition-all ${value === name ? "bg-white text-black" : "bg-black text-white hover:bg-zinc-900"}`}
+              className={`mx-1 md:mx-2 py-2 px-4 rounded-full text-sm cursor-pointer transition-all ${value === name ? "bg-white text-black" : "bg-black text-white hover:bg-zinc-900"}`}
               onClick={() => {setName(value) 
                 setIsLoading(true) 
-                setPage(1)
                 window.scrollTo({top:0,behavior:"smooth"})}}>
               {value}
             </span>

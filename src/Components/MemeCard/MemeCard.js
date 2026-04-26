@@ -22,7 +22,7 @@ export default function MemeCard({title,image,author,postPreview,downloadLink}){
     //         window.open(value)
     // }
     return(
-        <section className="memeCardSec rounded border m-0 pb-2 h-full">
+        <section className="memeCardSec rounded-2xl border m-0 pb-2 h-full">
             <div className="w-full flex justify-around mx-auto aspect-square bg-black py-4">
                 <img src={image[2]} alt={title} className="memeImg rounded" />
             </div>
