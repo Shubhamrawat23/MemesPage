@@ -11,6 +11,6 @@ export default function useGetMeme(memeChannel,setIsLoading,setPage,meme_num='50
                     setIsLoading(false)})
                 .catch((err)=>console.log(err))
         }
-    },[memeChannel,setIsLoading,setPage])
+    },[memeChannel, setIsLoading, setPage, meme_num])
     return data;
 }

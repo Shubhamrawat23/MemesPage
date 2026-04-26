@@ -1,7 +1,7 @@
 import React from "react";
 import "./MemeCard.css"
-import downloadIcon from "../../Icons/downloadIcon.png"
-import previewIcon from "../../Icons/previewIcon.png"
+// import downloadIcon from "../../Icons/downloadIcon.png"
+// import previewIcon from "../../Icons/previewIcon.png"
 
 export default function MemeCard({title,image,author,postPreview,downloadLink}){
     const handleDownload = async(downloadLink,title)=>{

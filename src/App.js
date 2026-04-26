@@ -3,10 +3,10 @@ import './App.css';
 import useGetMeme from './C_Hook/useGetMeme.js'
 import InputFields from './Components/InputFields.js';
 import MemeCard from './Components/MemeCard/MemeCard.js'
-import BackBtn from "./Icons/back-animation.mp4"
-import BackPoster from "./Icons/left-arrow.png"
-import NextBtn from "./Icons/next-animation.mp4"
-import NextPoster from "./Icons/right-arrow.png"
+// import BackBtn from "./Icons/back-animation.mp4"
+// import BackPoster from "./Icons/left-arrow.png"
+// import NextBtn from "./Icons/next-animation.mp4"
+// import NextPoster from "./Icons/right-arrow.png"
 
 
 function App() {
@@ -68,7 +68,7 @@ useEffect(()=>{
         </div> 
       </div>
 
-      <div id={name===""?'boxOfAboutMeme':'activeAboutMeme'} className={name != "" ?'my-4':''}>
+      <div id={name===""?'boxOfAboutMeme':'activeAboutMeme'} className={name !== "" ?'my-4':''}>
         {name === "" ?
           <div id='enterName'>Please Enter any channel Name</div> :
           <>
@@ -116,6 +116,7 @@ useEffect(()=>{
           id='nextVideo'
           disabled={getMeme && page >= Math.ceil((getMeme.length) / 6)} />
       </button> */}
+      
 
     </div>
   );
