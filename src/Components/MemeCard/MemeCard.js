@@ -4,23 +4,23 @@ import "./MemeCard.css"
 // import previewIcon from "../../Icons/previewIcon.png"
 
 export default function MemeCard({title,image,author,postPreview,downloadLink}){
-    const handleDownload = async(downloadLink,title)=>{
-        const imgBlob = await fetch(downloadLink)
-        .then((res)=>res.arrayBuffer())
-        .then((val)=>new Blob([val],{type:'image/gif'}))
+    // const handleDownload = async(downloadLink,title)=>{
+    //     const imgBlob = await fetch(downloadLink)
+    //     .then((res)=>res.arrayBuffer())
+    //     .then((val)=>new Blob([val],{type:'image/gif'}))
 
         
-        const link = document.createElement('a')
-        link.href= URL.createObjectURL(imgBlob)
-        link.download = title
-        document.body.appendChild(link)
-        link.click()
-       document.body.removeChild(link)
-    }
+    //     const link = document.createElement('a')
+    //     link.href= URL.createObjectURL(imgBlob)
+    //     link.download = title
+    //     document.body.appendChild(link)
+    //     link.click()
+    //    document.body.removeChild(link)
+    // }
 
-    const handlePostPreview = (value)=>{
-            window.open(value)
-    }
+    // const handlePostPreview = (value)=>{
+    //         window.open(value)
+    // }
     return(
         <section className="memeCardSec rounded border m-0 pb-2 h-full">
             <div className="w-full flex justify-around mx-auto aspect-square bg-black py-4">

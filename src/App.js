@@ -11,7 +11,7 @@ import MemeCard from './Components/MemeCard/MemeCard.js'
 
 function App() {
   const [name,setName] = useState("")
-  const [page,setPage] = useState(1)
+  const [setPage] = useState(1)
   const [recentSearch,setRecentSearch] = useState([])
   const [isLoading,setIsLoading] = useState(false)
   const getMeme = useGetMeme(name,setIsLoading,setPage)
